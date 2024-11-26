@@ -1,16 +1,16 @@
 ## C
 
-* Volatile keyword
+* **Volatile** keyword
     The volatile keyword tell the compiler that the variable next to it may change at any time of the program execution and should not be optimized.
     Useful when:
     - INTERFACE WITH HARDWARE: When you interface with hardware that changes the value itself
     - MULTITHREADING: when there's another thread running that also uses the variable
     - SINGAL HANDLER: when there's a signal handler that might change the value of the variable.
-* Static keyword
+* **Static** keyword
     - static variable inside a function; The variable will keeps its value between the function calls
     - static global variable limits the visibility of the variable or function to the current translation unit. Each of the translation units will have a static global variable of its own.
     - static function is only visible in the same translation unit
-* Extern keyword 
+* **Extern** keyword 
     - global variable that can be accessed from multiple translation units, the declaration should be stored in a header file.
 
 * Translation Unit
@@ -28,6 +28,11 @@
 
 * MMU - memory management unit
     support for address translation, used for virtual memory
+
+* Can a variable be both **const** and **volatile**?
+      YES. Volatile is just an info to the compiler not to optimize it. Const makes a variable unmodifiable to the receiver, however a setter (like an interrupt or a different thread) may still change it.
+
+* what is a packed struct?  
 
 ## C++
 
