@@ -41,4 +41,10 @@
 * How can memory be allocated in the kernel drivers / kernel API
     kmalloc - physical memory, vmalloc - virtual memory
 
+* List a few filesystems often used in the embedded linux world:
+  - ext2
+  - cramfs
+  - JFFS2
+  - squashfs
+  - YAFFS2
 
