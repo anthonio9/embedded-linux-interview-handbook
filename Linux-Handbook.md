@@ -47,4 +47,5 @@
   - JFFS2
   - squashfs
   - YAFFS2
+  - [seemingly great article on the filesystems](https://www.linkedin.com/pulse/some-common-file-systems-embedded-linux-mohammad-t-abdoli/)
 
