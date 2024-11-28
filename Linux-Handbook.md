@@ -49,3 +49,4 @@
   - YAFFS2
   - [seemingly great article on the filesystems](https://www.linkedin.com/pulse/some-common-file-systems-embedded-linux-mohammad-t-abdoli/)
 
+* Explain the difference between UART, SPI and I2S
