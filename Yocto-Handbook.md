@@ -11,10 +11,11 @@
   ```sh
   OVERRIDES = "architecture:os:machine"
   TEST = "defaultvalue"
-  TEST_os = "osspecificvalue"
-  TEST_other = "othercondvalue"
+  TEST:os = "osspecificvalue"
+  TEST:other = "othercondvalue"
   ```
   In this example, TEST will be osspecificvalue due to the condition of os being in OVERRIDES.
+  More about OVERRIDES can be found in the bitbake documentation [3.3 Conditional Syntax (Overrides)](https://docs.yoctoproject.org/bitbake/2.2/bitbake-user-manual/bitbake-user-manual-metadata.html#conditional-syntax-overrides)
 
 * Difference between :append and +=? Not just the whitespace!!!
 * Difference between packages and recipes? How many packages can one recipe produce?
