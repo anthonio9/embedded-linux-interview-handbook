@@ -33,3 +33,21 @@
 * Difference between packages and recipes? How many packages can one recipe produce?
 * what is the task order in yocto? How do the task depend on one another? How to get a log with the task order of a recipe?
 
+  The task order usually follows the standard pipeline, which consists of tasks as below:
+  
+  do_fetch → do_unpack → do_patch → do_prepare_recipe_sysroot → do_configure → do_compile → do_install → do_package → do_package_write_* → do_rootfs
+  
+  + do_fetch — downloads source (tarballs, git repos, etc.)
+  + do_unpack — extracts sources into the working directory
+  + do_patch — applies patches listed in SRC_URI
+  + do_prepare_recipe_sysroot — populates the sysroot with dependencies so configure/compile can find them
+  + do_configure — runs configuration (autoconf, cmake, meson, etc.)
+  + do_compile — builds the software
+  + do_install — installs files into ${D} (a staging area)
+  + do_package — splits installed files into packages (${PN}, ${PN}-dev, ${PN}-dbg, etc.)
+  + do_package_write_rpm/deb/ipk — writes the actual package files
+  + do_rootfs — assembles packages into a root filesystem (only in image recipes)
+
+  To list the task order use `listtasks` command:
+  ```bitbake -c listtasks <recipe>``` - prints all tasks for a recipe along with their descriptions. It doesn't show the dependency graph directly, but lists everything available.
+
